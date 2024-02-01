@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: rgb(166, 192, 254);
+    background: linear-gradient(150deg, rgba(166, 192, 254, 1) 0%, rgba(246, 128, 132, 1) 100%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color: whitesmoke;
+    font-weight: bold;
+}
+input{
+    border: none;
+    border-radius: .2rem;
+    background-color: rgba(255, 255, 255, 0.4);
+}

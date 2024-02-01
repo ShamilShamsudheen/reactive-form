@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   public submitted:boolean=false;
   
   ngOnInit(): void {
-    this.addHobby()
+    // this.addHobby()
     this.registerForm.valueChanges.subscribe( ()=>console.log(this.registerForm.invalid))
     this.registerForm.markAsPristine()
   }
@@ -38,17 +38,19 @@ export class AppComponent implements OnInit{
       zipCode: new FormControl('',[Validators.required,Validators.maxLength(20),Validators.pattern("^[0-9]*$")]),
       country: new FormControl('',[Validators.required,Validators.maxLength(20)]),
     }),
-    hobbies: new FormArray([])
+    hobbies: new FormArray([new FormControl('')])
   })
 
+  hobbies = this.registerForm.get('hobbies') as FormArray;
   
   addHobby() {
-    const hobbiesFormArray = this.registerForm.get('hobbies') as FormArray;
-    hobbiesFormArray.push(new FormControl(''));
+    this.hobbies.push(new FormControl(''));
+    console.log(this.hobbies.value);
+    
   }
-  
-  submit(){
-    this.submitted=true;
+  onSubmit(){
+    console.log(this.registerForm.value);
+    
   }
 
 }
